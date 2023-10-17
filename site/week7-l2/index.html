@@ -1,0 +1,1411 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../week7-l1/">
+      
+      
+        <link rel="next" href="../week8-l1/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>Controlling Motors - FRC - 2852 - Programming Fundamentals</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.eebd395e.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#understanding-motor-controllers" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="FRC - 2852 - Programming Fundamentals" class="md-header__button md-logo" aria-label="FRC - 2852 - Programming Fundamentals" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FRC - 2852 - Programming Fundamentals
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Controlling Motors
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="FRC - 2852 - Programming Fundamentals" class="md-nav__button md-logo" aria-label="FRC - 2852 - Programming Fundamentals" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    FRC - 2852 - Programming Fundamentals
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Week 1 - Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Week 1 - Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week1-l1/" class="md-nav__link">
+        Setup dev environment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week1-l2/" class="md-nav__link">
+        Robotics components
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Week 2 - Introduction to Java Programming
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Week 2 - Introduction to Java Programming
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week2-preface/" class="md-nav__link">
+        Comments
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week2-l1/" class="md-nav__link">
+        Variables and Data Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week2-l3/" class="md-nav__link">
+        Scope and Constants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week2-l2/" class="md-nav__link">
+        Operators
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Week 3 - Control Flow
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Week 3 - Control Flow
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week3-l1/" class="md-nav__link">
+        If-Else Statements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week3-l2/" class="md-nav__link">
+        Switch-Case Statements
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Week 4 - Loops and Functions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Week 4 - Loops and Functions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week4-l1/" class="md-nav__link">
+        Loops
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week4-l2/" class="md-nav__link">
+        Functions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Week 5 - Object-Oriented Programming
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Week 5 - Object-Oriented Programming
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week5-l1/" class="md-nav__link">
+        Introduction to Object-Oriented Programming (OOP)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week5-l2/" class="md-nav__link">
+        Classes and Objects in Java
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Week 6 - Arrays and Exception Handling
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Week 6 - Arrays and Exception Handling
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week6-l1/" class="md-nav__link">
+        Arrays
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week6-l2/" class="md-nav__link">
+        Exception Handling
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          Week 7 - Introduction to WPILib
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Week 7 - Introduction to WPILib
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week7-l1/" class="md-nav__link">
+        Exploring the WPILib Framework
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Controlling Motors
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Controlling Motors
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-motor-controllers" class="md-nav__link">
+    Understanding Motor Controllers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-a-motor-with-a-joystick" class="md-nav__link">
+    Control a Motor with a Joystick
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inverting-motor-direction" class="md-nav__link">
+    Inverting Motor Direction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-follower-motor" class="md-nav__link">
+    Create a Follower Motor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stop-motor-with-limit-switch" class="md-nav__link">
+    Stop Motor with Limit Switch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reading-from-the-hall-sensor-encoder" class="md-nav__link">
+    Reading from the Hall Sensor Encoder
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    Tasks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    Additional Resources
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          Week 8 - Sensors and Pneumatics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Week 8 - Sensors and Pneumatics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week8-l1/" class="md-nav__link">
+        Sensors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week8-l2/" class="md-nav__link">
+        Pneumatics
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          Week 9 - Command-Based Programming
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Week 9 - Command-Based Programming
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week9-l1/" class="md-nav__link">
+        Introduction to Command-Based Programming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week9-l2/" class="md-nav__link">
+        Advanced Command-Based Programming
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+          Week 10 - Smartdashboard and Auto
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Week 10 - Smartdashboard and Auto
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week10-l1/" class="md-nav__link">
+        SmartDashboard / Cameras
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week10-l2/" class="md-nav__link">
+        Autonomous
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week11/" class="md-nav__link">
+        Week 11 - PID Tuning
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week12/" class="md-nav__link">
+        Week 12 - Putting it all together
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../week13/" class="md-nav__link">
+        Week 13 - PathWeaver
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+          Examples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_15">
+          <span class="md-nav__icon md-icon"></span>
+          Examples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../todo/" class="md-nav__link">
+        Tank Drive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../todo/" class="md-nav__link">
+        Swerve Drive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../todo/" class="md-nav__link">
+        Flywheel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../todo/" class="md-nav__link">
+        Arm pivot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../todo/" class="md-nav__link">
+        Elevator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../todo/" class="md-nav__link">
+        Intake
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../todo/" class="md-nav__link">
+        Autonomous
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../todo/" class="md-nav__link">
+        PathWeaver
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/" class="md-nav__link">
+        Resources
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-motor-controllers" class="md-nav__link">
+    Understanding Motor Controllers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-a-motor-with-a-joystick" class="md-nav__link">
+    Control a Motor with a Joystick
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inverting-motor-direction" class="md-nav__link">
+    Inverting Motor Direction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-follower-motor" class="md-nav__link">
+    Create a Follower Motor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stop-motor-with-limit-switch" class="md-nav__link">
+    Stop Motor with Limit Switch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reading-from-the-hall-sensor-encoder" class="md-nav__link">
+    Reading from the Hall Sensor Encoder
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    Tasks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    Additional Resources
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Controlling Motors</h1>
+
+<p>Controlling your motors is an essential part of FRC Robotics. It's not just about setting a power and leaving it; you'll often need to dynamically control motors based on sensors, user input, or pre-defined conditions. In this lesson, we will explore some of the advanced controls available in WPILib.</p>
+<h2 id="understanding-motor-controllers">Understanding Motor Controllers</h2>
+<p>In FRC Robotics, motor controllers are the interfaces that allow us to electronically control the motors. Various types of motor controllers are used in FRC, each with their own unique properties and methods of control. Some common examples include the SparkMax, Talon, and Victor motor controllers.</p>
+<p>WPILib has classes to represent these motor controllers, such as <code>SparkMax</code>, <code>Talon</code>, <code>Victor</code>, etc. To use a motor controller in your code, you instantiate the corresponding class and use its methods to control the motor.</p>
+<h2 id="example">Example</h2>
+<p>Here is a basic example of how to use a <code>SparkMax</code> motor controller to control a motor:</p>
+<pre><code>import edu.wpi.first.wpilibj.TimedRobot;
+import com.revrobotics.CANSparkMax;
+
+public class Robot extends TimedRobot {
+    private CANSparkMax motor;
+
+    @Override
+    public void robotInit() {
+        motor = new CANSparkMax(1, MotorType.kBrushless); // SparkMax is flashed to CAN id 1
+    }
+
+    @Override
+    public void teleopPeriodic() {
+        motor.set(0.5); // Set the motor to half power
+    }
+}
+</code></pre>
+<p>In the <code>robotInit</code> method, we initialize a new <code>SparkMax</code> motor controller on CAN id 1. Then, in <code>teleopPeriodic</code>, we set the power of the motor to 0.5, which is half power.</p>
+<h2 id="control-a-motor-with-a-joystick">Control a Motor with a Joystick</h2>
+<p>In many robots, you'll want to use a joystick to control the motor. In the <code>teleopPeriodic()</code> method, the joystick's Y-axis value is continually read and directly set as the output for the motor controller. As <code>controller.getY(Hand.kLeft)</code> returns a value between -1 and 1 (representing the full range of the joystick), the motor speed varies from full reverse (-1), to stop (0), to full forward (+1) corresponding to the movement of the joystick.</p>
+<p>Here's how to do this:</p>
+<pre><code>import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.XboxController;
+import com.revrobotics.CANSparkMax;
+
+public class Robot extends TimedRobot {
+    private CANSparkMax motor;
+    private XboxController controller;
+
+    @Override
+    public void robotInit() {
+        motor = new CANSparkMax(1, MotorType.kBrushless);
+        controller = new XboxController(0); // Controller in USB port 0
+    }
+
+    @Override
+    public void teleopPeriodic() {
+        motor.set(controller.getY(Hand.kLeft)); // Control motor power with left joystick Y-axis
+    }
+}
+</code></pre>
+<p>This results in a straightforward one-to-one control system where the position of the joystick directly influences the speed and direction of the motor.</p>
+<h2 id="inverting-motor-direction">Inverting Motor Direction</h2>
+<p>In many robotic systems, especially those with multiple motor assemblies like a drivetrain, there might be a requirement for one motor to mirror or "follow" the actions of another. This is typically done to ensure synchronized operation of multiple motors for executing coordinated tasks.</p>
+<pre><code>motor.setInverted(true); // Inverts the direction of the motor
+</code></pre>
+<h2 id="create-a-follower-motor">Create a Follower Motor</h2>
+<p>In many robotic systems, especially those with multiple motor assemblies like a drivetrain, there might be a requirement for one motor to mirror or "follow" the actions of another. This is typically done to ensure synchronized operation of multiple motors for executing coordinated tasks.</p>
+<p>In the example given below, a second motor, <code>followerMotor</code>, is declared and set to follow the <code>motor</code>. The follower <code>motor</code> is also a SPARK MAX motor controller, connected through the CAN bus on port 2.</p>
+<p>Once <code>followerMotor.follow(motor)</code> is called, the <code>followerMotor</code> will now mirror the actions of <code>motor</code>. So, if <code>motor</code>'s speed is set to 0.5, the <code>followerMotor</code> will also run at a speed of 0.5. If <code>motor</code>'s direction changes, the <code>followerMotor</code> will change its direction as well. The follower <code>motor</code>'s operation is now entirely dependent on the leading motor unless otherwise specified.</p>
+<pre><code>CANSparkMax followerMotor = new CANSparkMax(2, MotorType.kBrushless);
+followerMotor.follow(motor); // followerMotor will now mirror the actions of motor
+</code></pre>
+<h2 id="stop-motor-with-limit-switch">Stop Motor with Limit Switch</h2>
+<p>A limit switch halts a motor when it reaches a specified limit. This can be crucial in preventing mechanical damage or undesired behavior. Upon the switch's trigger, the software stops the motor, ensuring controlled movement.</p>
+<pre><code>DigitalInput limitSwitch = new DigitalInput(0); // Limit switch plugged into DIO port 0
+
+@Override
+public void teleopPeriodic() {
+    if (limitSwitch.get()) { // If limit switch is triggered
+        motor.stopMotor(); // Stop the motor
+    } else {
+        motor.set(0.5); // Otherwise, set motor to half power
+    }
+}
+</code></pre>
+<p>The <code>limitSwitch.get()</code> function returns a boolean value that indicates the state of the limit switch. If the switch is pressed (i.e., the limit has been reached), it returns <code>true</code>. If the switch is not pressed (i.e., the limit has not been reached), it returns <code>false</code>. The return value of this function can be used to conditionally control the motor, stopping it when the limit is reached.</p>
+<h2 id="reading-from-the-hall-sensor-encoder">Reading from the Hall Sensor Encoder</h2>
+<p>A Hall sensor encoder is a device typically attached to a motor, providing real-time position feedback by detecting changes in magnetic fields. This ability to precisely measure the motor's position is crucial for tasks that require fine control and accurate movements. For instance, a robot arm that needs to move to specific locations would benefit from a Hall sensor encoder. The line <code>double position = motor.getEncoder().getPosition();</code> fetches the motor's current position, which can then be output or utilized within the program for responsive control.</p>
+<pre><code>double position = motor.getEncoder().getPosition(); // Get current position of motor
+System.out.println("Motor Position: " + position);
+</code></pre>
+<h2 id="tasks">Tasks</h2>
+<ol>
+<li>
+<p><strong>Explore SparkMax motor controller</strong>:
+Start a new robot project as you've learned before. Instantiate a SparkMax motor controller and write a simple program that sets its speed to half power in the teleoperated mode. Test this program in the simulator to ensure the motor is working correctly.</p>
+</li>
+<li>
+<p><strong>Control a motor with a joystick</strong>:
+Expand your program to control the SparkMax motor with a joystick. Map the Y-axis of the joystick to the power of the motor. Observe how the motor's speed and direction change with the joystick's movement in the simulator.</p>
+</li>
+<li>
+<p><strong>Invert motor direction</strong>:
+Experiment with the setInverted method. Write a program where the motor direction is inverted after a certain time or based on a button press on the joystick. Observe the behavior in the simulator.</p>
+</li>
+<li>
+<p><strong>Create a follower motor</strong>:
+Extend your robot setup to include a second motor. Use the follow method to make the second motor follow the first one. Observe how the follower motor mirrors the actions of the leading motor in the simulator.</p>
+</li>
+<li>
+<p><strong>Implement a limit switch</strong>:
+Use a digital input to simulate a limit switch in your code. Program the motor to stop when the limit switch is triggered and run otherwise. Test your setup in the simulator.</p>
+</li>
+<li>
+<p><strong>Read from a Hall Sensor Encoder</strong>:
+Use the getEncoder and getPosition methods to read the position of the motor. Print this value to the console in your robot program and observe how it changes as you run the motor.</p>
+</li>
+</ol>
+<h2 id="additional-resources">Additional Resources</h2>
+<p><a href="https://docs.wpilib.org/en/stable/docs/software/hardware-apis/motors/wpi-drive-classes.html">WPILib Motor Control Documentation</a></p>
+<p><a href="https://codedocs.revrobotics.com/java/com/revrobotics/package-summary.html">REV Robotics SPARK MAX Software Resources</a></p>
+<p><a href="https://github.com/REVrobotics/SPARK-MAX-Examples/tree/master/Java">REV Robotics SPARK MAX Examples</a></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>
