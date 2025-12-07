@@ -135,6 +135,11 @@
   background: #9f9797;
 }
 
+/* For small logos that need to be scaled up */
+.sponsor-card.sponsor-card-scale-up img {
+  transform: scale(2);
+}
+
 /* ==========================================================================
    CTA Section
    ========================================================================== */
