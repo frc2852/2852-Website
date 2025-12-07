@@ -8,6 +8,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -18,6 +19,7 @@ body {
   color: var(--hv-gray-700);
   padding-top: 76px; /* Navbar height */
   overflow-x: hidden;
+  max-width: 100vw;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -151,6 +153,7 @@ h3 { font-size: clamp(1.5rem, 3vw, var(--font-size-3xl)); }
   position: absolute;
   inset: 0;
   z-index: -1;
+  overflow: hidden;
 }
 
 .hero-image {
