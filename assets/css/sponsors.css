@@ -205,17 +205,61 @@
 }
 
 @media (max-width: 575.98px) {
+  .sponsors-section {
+    padding: var(--space-8) 0;
+  }
+
+  .sponsors-section .container {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+
   .sponsor-grid,
   .sponsor-grid-platinum,
   .sponsor-grid-gold,
   .sponsor-grid-silver,
   .sponsor-grid-bronze {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-4);
+    gap: var(--space-3);
+    width: 100%;
+    max-width: 100%;
   }
 
   .sponsor-card {
-    padding: var(--space-4);
-    min-height: 140px;
+    padding: var(--space-3);
+    min-height: 120px;
+    aspect-ratio: 4/3;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .sponsor-card img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+
+  .tier-header {
+    margin-bottom: var(--space-6);
+  }
+
+  .sponsor-tier {
+    margin-bottom: var(--space-8);
+  }
+}
+
+/* Very small phones */
+@media (max-width: 374.98px) {
+  .sponsor-grid,
+  .sponsor-grid-platinum,
+  .sponsor-grid-gold,
+  .sponsor-grid-silver,
+  .sponsor-grid-bronze {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .sponsor-card {
+    min-height: 150px;
+    aspect-ratio: 16/10;
   }
 }
