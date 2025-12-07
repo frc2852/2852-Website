@@ -1,13 +1,157 @@
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;  
+/* ==========================================================================
+   Resources Page Styles - Team 2852 High Voltage
+   ========================================================================== */
+
+/* ==========================================================================
+   Resource Cards
+   ========================================================================== */
+
+.resources-section {
+  padding: var(--space-20) 0;
+  background: var(--hv-gray-100);
+  min-height: calc(100vh - 400px);
 }
 
-main {
-    flex: 1 0 auto;
+.resource-card {
+  background: var(--hv-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-10);
+  height: 100%;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
 }
 
-footer {
-    flex-shrink: 0; 
+.resource-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--hv-primary);
+  transform: scaleX(0);
+  transition: transform var(--transition-base);
+}
+
+.resource-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.resource-card:hover::before {
+  transform: scaleX(1);
+}
+
+.resource-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--hv-gray-100);
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-base);
+}
+
+.resource-card:hover .resource-icon {
+  background: rgba(var(--hv-primary-rgb), 0.1);
+}
+
+.resource-icon img {
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
+}
+
+.resource-icon i {
+  font-size: 3rem;
+  color: var(--hv-primary);
+}
+
+.resource-card h3 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-4);
+  color: var(--hv-gray-900);
+}
+
+.resource-card p {
+  color: var(--hv-gray-600);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-6);
+}
+
+.resource-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--hv-primary);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  font-size: var(--font-size-base);
+  transition: all var(--transition-fast);
+}
+
+.resource-link:hover {
+  gap: var(--space-3);
+  color: var(--hv-primary-dark);
+}
+
+.resource-link i {
+  transition: transform var(--transition-fast);
+}
+
+.resource-link:hover i {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   CTA Section
+   ========================================================================== */
+
+.resources-cta {
+  background: var(--hv-secondary);
+  padding: var(--space-16) 0;
+  text-align: center;
+  color: var(--hv-white);
+}
+
+.resources-cta h2 {
+  color: var(--hv-white);
+  margin-bottom: var(--space-4);
+}
+
+.resources-cta p {
+  color: var(--hv-gray-400);
+  max-width: 600px;
+  margin: 0 auto var(--space-8);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 991.98px) {
+  .resource-card {
+    padding: var(--space-8);
+  }
+
+  .resource-icon {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .resources-section {
+    padding: var(--space-12) 0;
+  }
+
+  .resource-card {
+    padding: var(--space-6);
+  }
 }

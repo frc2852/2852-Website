@@ -1,0 +1,221 @@
+/* ==========================================================================
+   Sponsors Page Styles - Team 2852 High Voltage
+   ========================================================================== */
+
+/* ==========================================================================
+   Sponsors Section
+   ========================================================================== */
+
+.sponsors-section {
+  padding: var(--space-16) 0;
+  background: var(--hv-gray-100);
+}
+
+/* ==========================================================================
+   Tier Sections
+   ========================================================================== */
+
+.sponsor-tier {
+  margin-bottom: var(--space-16);
+}
+
+.sponsor-tier:last-child {
+  margin-bottom: 0;
+}
+
+.tier-header {
+  text-align: center;
+  margin-bottom: var(--space-10);
+}
+
+.tier-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  font-size: 1.75rem;
+  margin-bottom: var(--space-4);
+  box-shadow: var(--shadow-md);
+}
+
+.sponsor-tier.platinum .tier-icon {
+  background: linear-gradient(135deg, var(--tier-platinum-start), var(--tier-platinum-end));
+  color: var(--hv-gray-800);
+}
+
+.sponsor-tier.gold .tier-icon {
+  background: linear-gradient(135deg, var(--tier-gold-start), var(--tier-gold-end));
+  color: var(--hv-gray-800);
+}
+
+.sponsor-tier.silver .tier-icon {
+  background: linear-gradient(135deg, var(--tier-silver-start), var(--tier-silver-end));
+  color: var(--hv-gray-800);
+}
+
+.sponsor-tier.bronze .tier-icon {
+  background: linear-gradient(135deg, var(--tier-bronze-start), var(--tier-bronze-end));
+  color: var(--hv-white);
+}
+
+.tier-title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-3);
+  color: var(--hv-gray-900);
+}
+
+.tier-line {
+  width: 60px;
+  height: 4px;
+  background: var(--hv-primary);
+  margin: 0 auto;
+  border-radius: var(--radius-full);
+}
+
+/* ==========================================================================
+   Sponsor Grid
+   ========================================================================== */
+
+.sponsor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 420px));
+  gap: var(--space-8);
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* All tiers use the same grid - uniform sizing */
+.sponsor-grid-platinum,
+.sponsor-grid-gold,
+.sponsor-grid-silver,
+.sponsor-grid-bronze {
+  grid-template-columns: repeat(auto-fill, minmax(330px, 420px));
+}
+
+/* ==========================================================================
+   Sponsor Cards
+   ========================================================================== */
+
+.sponsor-card {
+  background: var(--hv-white);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 270px;
+  aspect-ratio: 16/10;
+}
+
+.sponsor-card:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+.sponsor-card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(30%);
+  transition: filter var(--transition-base);
+}
+
+.sponsor-card:hover img {
+  filter: grayscale(0%);
+}
+
+/* For logos with white text that need a contrasting background */
+.sponsor-card.light-bg {
+  background: #9f9797;
+}
+
+/* ==========================================================================
+   CTA Section
+   ========================================================================== */
+
+.sponsors-cta {
+  background: linear-gradient(135deg, var(--hv-primary), var(--hv-primary-dark));
+  padding: var(--space-16) 0;
+  text-align: center;
+  color: var(--hv-white);
+}
+
+.sponsors-cta h2 {
+  color: var(--hv-white);
+  margin-bottom: var(--space-4);
+}
+
+.sponsors-cta p {
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto var(--space-8);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 991.98px) {
+  .sponsor-grid,
+  .sponsor-grid-platinum,
+  .sponsor-grid-gold,
+  .sponsor-grid-silver,
+  .sponsor-grid-bronze {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 375px));
+  }
+}
+
+@media (max-width: 767.98px) {
+  .sponsors-section {
+    padding: var(--space-12) 0;
+  }
+
+  .sponsor-tier {
+    margin-bottom: var(--space-12);
+  }
+
+  .sponsor-grid,
+  .sponsor-grid-platinum,
+  .sponsor-grid-gold,
+  .sponsor-grid-silver,
+  .sponsor-grid-bronze {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 300px));
+    gap: var(--space-4);
+  }
+
+  .sponsor-card {
+    min-height: 210px;
+  }
+
+  .tier-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  .tier-title {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .sponsor-grid,
+  .sponsor-grid-platinum,
+  .sponsor-grid-gold,
+  .sponsor-grid-silver,
+  .sponsor-grid-bronze {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  .sponsor-card {
+    padding: var(--space-4);
+    min-height: 140px;
+  }
+}
