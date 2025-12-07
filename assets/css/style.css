@@ -206,6 +206,7 @@ h3 { font-size: clamp(1.5rem, 3vw, var(--font-size-3xl)); }
   line-height: 0.85;
   text-shadow: 0 0 60px rgba(var(--hv-primary-rgb), 0.5);
   letter-spacing: -0.02em;
+  color: var(--hv-white);
 }
 
 .team-name {
@@ -215,6 +216,7 @@ h3 { font-size: clamp(1.5rem, 3vw, var(--font-size-3xl)); }
   letter-spacing: 0.15em;
   display: block;
   margin-top: var(--space-2);
+  color: var(--hv-white);
 }
 
 .hero-tagline {
@@ -561,6 +563,7 @@ h3 { font-size: clamp(1.5rem, 3vw, var(--font-size-3xl)); }
   margin-bottom: var(--space-6);
   position: relative;
   padding-bottom: var(--space-3);
+  color: var(--hv-white)
 }
 
 .footer-heading::after {
@@ -765,6 +768,7 @@ a.scrollup:hover {
   font-weight: var(--font-weight-black);
   margin-bottom: var(--space-4);
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  color: var(--hv-white);
 }
 
 .page-subtitle {
