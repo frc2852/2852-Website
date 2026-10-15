@@ -4,12 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our History | Team 2852 High Voltage</title>
-  <meta name="description" content="Explore the history of FRC Team 2852 High Voltage - 16 years of innovation, competition, and excellence in FIRST Robotics.">
+  <title>Our History | DM Robotics Team 2852</title>
+  <meta name="description" content="Explore the history of DM Robotics (FRC Team 2852) - 18 years of innovation, competition, and excellence in FIRST Robotics.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Team 2852 History">
-  <meta property="og:description" content="16 years of innovation and excellence in FIRST Robotics">
+  <meta property="og:description" content="18 years of innovation and excellence in FIRST Robotics">
   <meta property="og:url" content="https://2852.ca/history">
   <meta property="og:type" content="website">
 
@@ -23,12 +23,14 @@
   <!-- CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/variables.css">
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/timeline.css">
-  <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="./assets/img/favicon.ico" sizes="any">
+  <link rel="icon" href="./assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png">
 </head>
 
 <body>
@@ -36,7 +38,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-custom fixed-top">
       <div class="container">
         <a class="navbar-brand" href="index">
-          <img src="./assets/img/logo.png" alt="Team 2852 Logo" class="d-inline-block align-top">
+          <img src="./assets/img/logo/white-horizontal.png" alt="DM Robotics Team 2852">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -69,84 +71,53 @@
 
   <main>
     <!-- History Hero Section -->
-    <section class="history-hero">
-      <div class="hero-background">
-        <img src="./assets/img/background.jpg" alt="" class="hero-image">
-        <div class="hero-overlay"></div>
-      </div>
-      <div class="container hero-content">
-        <span class="hero-badge" data-aos="fade-down">16 Years of Excellence</span>
-        <h1 class="hero-title">
-          <span class="history-title" data-aos="zoom-in" data-aos-delay="200">Our History</span>
-          <span class="team-name" data-aos="fade-up" data-aos-delay="400">Building Champions</span>
-        </h1>
-        <p class="hero-tagline" data-aos="fade-up" data-aos-delay="600">
-          From rookie year to the World Stage
-        </p>
+    <section class="page-hero history-hero">
+      <div class="container">
+        <span class="section-badge" data-aos="fade-up">18 Years of Excellence</span>
+        <h1 class="page-title" data-aos="fade-up" data-aos-delay="100">Our History</h1>
+        <p class="page-subtitle" data-aos="fade-up" data-aos-delay="200">From rookie year to the World Stage</p>
 
         <!-- Championship Showcase Cards -->
-        <div class="championship-showcase" data-aos="fade-up" data-aos-delay="800">
-          <div class="row g-4 justify-content-center">
-            <div class="col-md-5">
-              <div class="championship-card">
-                <span class="championship-year">2015</span>
-                <span class="championship-badge"><i class="fa-solid fa-trophy"></i> World Championship</span>
-                <h3 class="championship-game">Recycle Rush</h3>
-                <p class="championship-result">Carver Division - Quarterfinals</p>
-              </div>
-            </div>
-            <div class="col-md-5">
-              <div class="championship-card">
-                <span class="championship-year">2019</span>
-                <span class="championship-badge"><i class="fa-solid fa-trophy"></i> World Championship</span>
-                <h3 class="championship-game">Destination: Deep Space</h3>
-                <p class="championship-result">Archimedes Division - Quarterfinals</p>
-              </div>
-            </div>
+        <div class="championship-showcase" data-aos="fade-up" data-aos-delay="300">
+          <div class="championship-card">
+            <span class="championship-year">2015</span>
+            <span class="championship-badge"><i class="fa-solid fa-trophy"></i> World Championship</span>
+            <h3 class="championship-game">Recycle Rush</h3>
+            <p class="championship-result">Carver Division - Quarterfinals</p>
+          </div>
+          <div class="championship-card">
+            <span class="championship-year">2019</span>
+            <span class="championship-badge"><i class="fa-solid fa-trophy"></i> World Championship</span>
+            <h3 class="championship-game">Destination: Deep Space</h3>
+            <p class="championship-result">Archimedes Division - Quarterfinals</p>
           </div>
         </div>
 
-        <div class="hero-cta" data-aos="fade-up" data-aos-delay="1000">
+        <div class="hero-cta" data-aos="fade-up" data-aos-delay="400">
           <a href="#timeline" class="btn btn-primary btn-lg">Explore Timeline</a>
         </div>
       </div>
-      <div class="hero-scroll">
-        <span>Scroll</span>
-        <i class="fa-solid fa-chevron-down"></i>
-      </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section">
+    <!-- Stats -->
+    <section class="stats-strip" aria-label="Team statistics">
       <div class="container">
-        <div class="row">
-          <div class="col-6 col-md-3" data-aos="fade-up">
-            <div class="stat-card">
-              <i class="fa-solid fa-calendar stat-icon"></i>
-              <span class="stat-number counter" data-count="15">0</span>
-              <span class="stat-label">Seasons Competed</span>
-            </div>
+        <div class="stats-strip-grid">
+          <div class="stat-item">
+            <span class="stat-number counter" data-count="18">18</span>
+            <span class="stat-label">Seasons<br>Competed</span>
           </div>
-          <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
-            <div class="stat-card">
-              <i class="fa-solid fa-earth-americas stat-icon"></i>
-              <span class="stat-number counter" data-count="2">0</span>
-              <span class="stat-label">World Championships</span>
-            </div>
+          <div class="stat-item">
+            <span class="stat-number counter" data-count="2">2</span>
+            <span class="stat-label">World<br>Championships</span>
           </div>
-          <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
-            <div class="stat-card">
-              <i class="fa-solid fa-medal stat-icon"></i>
-              <span class="stat-number counter" data-count="14">0</span>
-              <span class="stat-label">Awards Won</span>
-            </div>
+          <div class="stat-item">
+            <span class="stat-number counter" data-count="14">14</span>
+            <span class="stat-label">Awards<br>Won</span>
           </div>
-          <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
-            <div class="stat-card">
-              <i class="fa-solid fa-robot stat-icon"></i>
-              <span class="stat-number counter" data-count="17">0</span>
-              <span class="stat-label">Robots Built</span>
-            </div>
+          <div class="stat-item">
+            <span class="stat-number counter" data-count="19">19</span>
+            <span class="stat-label">Robots<br>Built</span>
           </div>
         </div>
       </div>
@@ -164,6 +135,36 @@
         </div>
 
         <div class="timeline-modern">
+          <!-- 2026 -->
+          <div class="timeline-item timeline-left" data-aos="fade-right">
+            <div class="timeline-marker">
+              <span class="timeline-year">2026</span>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-card-image">
+                <img src="assets/img/history/2026.jpg" alt="2026 Robot - REBUILT" loading="lazy">
+              </div>
+              <div class="timeline-card-content">
+                <span class="season-label">REBUILT</span>
+                <h3 class="season-title">2026 Season</h3>
+                <div class="season-results">
+                  <div class="result-item">
+                    <span class="event-name">ONT District McMaster University Event</span>
+                    <span class="event-result">Rank 24, Alliance 6 - Playoffs Round 3</span>
+                  </div>
+                  <div class="result-item">
+                    <span class="event-name">ONT District Niagara College Event</span>
+                    <span class="event-result">Rank 26, Alliance 6 - Playoffs Round 3</span>
+                  </div>
+                  <div class="result-item">
+                    <span class="event-name">FIRST Ontario Provincial Championship</span>
+                    <span class="event-result">Technology Division - Rank 41</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <!-- 2025 -->
           <div class="timeline-item timeline-right" data-aos="fade-left">
             <div class="timeline-marker">
@@ -605,48 +606,33 @@
 
   <!-- Footer -->
   <footer class="site-footer">
-    <div class="footer-main">
-      <div class="container">
-        <div class="row g-4">
-          <div class="col-lg-4">
-            <div class="footer-brand">
-              <img src="./assets/img/logo.png" alt="Team 2852" class="footer-logo">
-              <p>FRC Team 2852 "High Voltage" from Denis Morris Catholic High School in St. Catharines, Ontario. Building tomorrow's innovators through robotics.</p>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <h4 class="footer-heading">Quick Links</h4>
-            <ul class="footer-links">
-              <li><a href="index">Home</a></li>
-              <li><a href="history">History</a></li>
-              <li><a href="resources">Resources</a></li>
-              <li><a href="./site/index.html">Programming Course</a></li>
-              <li><a href="sponsors">Sponsors</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-4">
-            <h4 class="footer-heading">Connect With Us</h4>
-            <div class="social-links">
-              <a href="https://www.instagram.com/frc2852/" target="_blank" rel="noopener" aria-label="Instagram">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-              <a href="https://twitter.com/frcTeam2852" target="_blank" rel="noopener" aria-label="Twitter">
-                <i class="fa-brands fa-x-twitter"></i>
-              </a>
-              <a href="mailto:jeff@2852.ca?cc=krystian.booker@gmail.com" aria-label="Email">
-                <i class="fa-solid fa-envelope"></i>
-              </a>
-              <a href="https://github.com/frc2852" target="_blank" rel="noopener" aria-label="GitHub">
-                <i class="fa-brands fa-github"></i>
-              </a>
-            </div>
-          </div>
+    <div class="container">
+      <div class="footer-main">
+        <a href="index" aria-label="DM Robotics home">
+          <img src="./assets/img/logo/white-horizontal.png" alt="DM Robotics Team 2852" class="footer-logo" loading="lazy">
+        </a>
+        <ul class="footer-links">
+          <li><a href="history">History</a></li>
+          <li><a href="resources">Resources</a></li>
+          <li><a href="./site/index.html">Programming Course</a></li>
+          <li><a href="sponsors">Sponsors</a></li>
+        </ul>
+        <div class="social-links">
+          <a href="https://www.instagram.com/frc2852/" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="mailto:jeff@2852.ca?cc=krystian.booker@gmail.com" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="https://github.com/frc2852" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       <div class="container">
-        <p>&copy; 2025 Team 2852 FRC. All rights reserved.</p>
+        <p>&copy; 2026 Team 2852 FRC. All rights reserved.</p>
       </div>
     </div>
   </footer>

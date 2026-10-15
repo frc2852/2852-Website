@@ -4,11 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Team 2852 High Voltage | FRC Robotics</title>
-  <meta name="description" content="FRC Team 2852 High Voltage is a FIRST Robotics Competition team from Denis Morris Catholic High School in St. Catharines, Ontario.">
+  <title>DM Robotics Team 2852 | FRC Robotics</title>
+  <meta name="description" content="DM Robotics (FRC Team 2852) is a FIRST Robotics Competition team from Denis Morris Catholic High School in St. Catharines, Ontario.">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Team 2852 High Voltage">
+  <meta property="og:title" content="DM Robotics Team 2852">
   <meta property="og:description" content="FRC Team 2852 - Innovation, Teamwork, Excellence">
   <meta property="og:image" content="https://2852.ca/assets/img/team-photo.jpg">
   <meta property="og:url" content="https://2852.ca">
@@ -24,11 +24,13 @@
   <!-- CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/variables.css">
   <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="./assets/img/favicon.ico" sizes="any">
+  <link rel="icon" href="./assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png">
 </head>
 
 <body>
@@ -36,7 +38,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-custom fixed-top">
       <div class="container">
         <a class="navbar-brand" href="index">
-          <img src="./assets/img/logo.png" alt="Team 2852 Logo" class="d-inline-block align-top">
+          <img src="./assets/img/logo/white-horizontal.png" alt="DM Robotics Team 2852">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -68,63 +70,47 @@
   </header>
 
   <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-background">
-        <img src="./assets/img/background.jpg" alt="" class="hero-image">
-        <div class="hero-overlay"></div>
-      </div>
-      <div class="container hero-content">
-        <span class="hero-badge" data-aos="fade-down">FIRST Robotics Competition Team</span>
-        <h1 class="hero-title">
-          <span class="team-number" data-aos="zoom-in" data-aos-delay="200">2852</span>
-          <span class="team-name" data-aos="fade-up" data-aos-delay="400">High Voltage</span>
-        </h1>
-        <p class="hero-tagline" data-aos="fade-up" data-aos-delay="600">
-          Innovation. Teamwork. Excellence. <strong>#MoreThanRobots</strong>
-        </p>
-        <div class="hero-cta" data-aos="fade-up" data-aos-delay="800">
-          <a href="#about" class="btn btn-primary btn-lg">Learn More</a>
-          <a href="sponsors" class="btn btn-outline-light btn-lg">Our Sponsors</a>
+    <!-- Hero: glass panel + 2026 robot -->
+    <section class="hero-split">
+      <div class="hero-split-panel">
+        <img src="./assets/img/robot-2026.jpg" alt="" class="hero-split-blur" aria-hidden="true">
+        <div class="hero-split-tint"></div>
+        <div class="hero-split-content">
+          <span class="hero-eyebrow">FIRST Robotics Competition Team</span>
+          <h1 class="hero-logo">
+            <img src="./assets/img/logo/white-stacked.png" alt="DM Robotics Team 2852">
+          </h1>
+          <p class="hero-tagline">Innovation. Teamwork. Excellence. <strong>#MoreThanRobots</strong></p>
+          <div class="hero-cta">
+            <a href="#about" class="btn btn-primary btn-lg">Learn More</a>
+            <a href="sponsors" class="btn btn-outline-light btn-lg">Our Sponsors</a>
+          </div>
         </div>
       </div>
-      <div class="hero-scroll">
-        <span>Scroll</span>
-        <i class="fa-solid fa-chevron-down"></i>
+      <div class="hero-split-photo">
+        <img src="./assets/img/robot-2026.jpg" alt="DM Robotics 2026 robot" fetchpriority="high">
       </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section">
+    <!-- Stats -->
+    <section class="stats-strip" aria-label="Team statistics">
       <div class="container">
-        <div class="row">
-          <div class="col-6 col-md-3" data-aos="fade-up">
-            <div class="stat-card">
-              <i class="fa-solid fa-calendar stat-icon"></i>
-              <span class="stat-number counter" data-count="16">0</span>
-              <span class="stat-label">Years Active</span>
-            </div>
+        <div class="stats-strip-grid">
+          <div class="stat-item">
+            <span class="stat-number counter" data-count="18">18</span>
+            <span class="stat-label">Years<br>Active</span>
           </div>
-          <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
-            <div class="stat-card">
-              <i class="fa-solid fa-earth-americas stat-icon"></i>
-              <span class="stat-number counter" data-count="2">0</span>
-              <span class="stat-label">World Championships</span>
-            </div>
+          <div class="stat-item">
+            <span class="stat-number counter" data-count="2">2</span>
+            <span class="stat-label">World<br>Championships</span>
           </div>
-          <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
-            <div class="stat-card">
-              <i class="fa-solid fa-trophy stat-icon"></i>
-              <span class="stat-number counter" data-count="20">0</span>
-              <span class="stat-label">Awards Won</span>
-            </div>
+          <div class="stat-item">
+            <span class="stat-number counter" data-count="20">20</span>
+            <span class="stat-label">Awards<br>Won</span>
           </div>
-          <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
-            <div class="stat-card">
-              <i class="fa-solid fa-robot stat-icon"></i>
-              <span class="stat-number counter" data-count="15">0</span>
-              <span class="stat-label">Robots Built</span>
-            </div>
+          <div class="stat-item">
+            <span class="stat-number counter" data-count="19">19</span>
+            <span class="stat-label">Robots<br>Built</span>
           </div>
         </div>
       </div>
@@ -133,150 +119,95 @@
     <!-- About Section -->
     <section class="about-section" id="about">
       <div class="container">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-6 order-lg-2" data-aos="fade-left">
-            <div class="about-image-wrapper">
-              <img src="./assets/img/team-photo.jpg" alt="Team 2852 High Voltage" class="about-image" loading="lazy">
-            </div>
-          </div>
-          <div class="col-lg-6 order-lg-1" data-aos="fade-right">
-            <div class="about-content">
-              <span class="section-badge">Who We Are</span>
-              <h2 class="section-title">Building Tomorrow's Innovators</h2>
-              <p class="lead">
-                FRC Team 2852 is a FIRST Robotics Competition team from Denis Morris Catholic High School in St. Catharines, Ontario.
-              </p>
-              <p>
-                We are an innovation-driven team composed of enthusiastic students and dedicated professional mentors. Every year, FIRST releases a new game challenge, and it's our job to design, build, and program a robot to compete against teams from around the world.
-              </p>
-              <p>
-                Our goal extends beyond technical skills. We strive to create lifelong bonds, develop confident communication skills, foster leadership abilities, and build productive teamwork. Our values go beyond robots.
-              </p>
-              <div class="about-features">
-                <div class="feature-item">
-                  <i class="fa-solid fa-robot"></i>
-                  <span>Robot Design</span>
-                </div>
-                <div class="feature-item">
-                  <i class="fa-solid fa-code"></i>
-                  <span>Programming</span>
-                </div>
-                <div class="feature-item">
-                  <i class="fa-solid fa-users"></i>
-                  <span>Teamwork</span>
-                </div>
-                <div class="feature-item">
-                  <i class="fa-solid fa-lightbulb"></i>
-                  <span>Innovation</span>
-                </div>
-              </div>
-            </div>
+        <div class="about-grid">
+          <img src="./assets/img/team-photo.jpg" alt="DM Robotics team" class="about-image" loading="lazy" data-aos="fade-right">
+          <div class="about-content" data-aos="fade-left">
+            <span class="section-badge">Who We Are</span>
+            <h2 class="section-title">Building Tomorrow's Innovators</h2>
+            <p class="lead">
+              FRC Team 2852 is a FIRST Robotics Competition team from Denis Morris Catholic High School in St. Catharines, Ontario.
+            </p>
+            <p>
+              We are an innovation-driven team composed of enthusiastic students and dedicated professional mentors. Every year, FIRST releases a new game challenge, and it's our job to design, build, and program a robot to compete against teams from around the world.
+            </p>
+            <p>
+              Our goal extends beyond technical skills. We strive to create lifelong bonds, develop confident communication skills, foster leadership abilities, and build productive teamwork. Our values go beyond robots.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Current Season Section -->
+    <!-- Season Section -->
     <section class="season-section">
       <div class="container">
-        <div class="text-center mb-5">
-          <span class="section-badge" data-aos="fade-up">Current Season</span>
-          <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">2026 Season</h2>
-        </div>
-        <div class="row g-4 justify-content-center">
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="season-card">
-              <span class="season-badge">Week 3</span>
-              <h3 class="season-title">ONT District McMaster University Event</h3>
-              <p class="season-description">
-                <i class="fa-solid fa-location-dot"></i> Hamilton, ON, Canada<br>
-                <i class="fa-solid fa-calendar"></i> March 20-22, 2026
-              </p>
-              <a href="https://www.thebluealliance.com/event/2026onham" target="_blank" rel="noopener" class="btn btn-outline-primary">The Blue Alliance</a>
-            </div>
+        <div class="season-grid">
+          <div class="season-heading" data-aos="fade-up">
+            <span class="section-badge">Next Event</span>
+            <h2 class="section-title">2027 Season</h2>
           </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="season-card">
-              <span class="season-badge">Week 6</span>
-              <h3 class="season-title">ONT District Niagara College Event</h3>
-              <p class="season-description">
-                <i class="fa-solid fa-location-dot"></i> Welland, ON, Canada<br>
-                <i class="fa-solid fa-calendar"></i> April 10-12, 2026
-              </p>
-              <a href="https://www.thebluealliance.com/event/2026onwel" target="_blank" rel="noopener" class="btn btn-outline-primary">The Blue Alliance</a>
+          <article class="event-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="event-card-meta">
+              <span class="event-card-week">Week 5</span>
+              <span class="event-card-status">Registered</span>
             </div>
-          </div>
+            <h3 class="event-card-title">ONT District McMaster University Event 2027</h3>
+            <ul class="event-card-details">
+              <li><i class="fa-solid fa-calendar" aria-hidden="true"></i>April 2–4, 2027</li>
+              <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Hamilton, ON, Canada</li>
+            </ul>
+            <a href="https://www.thebluealliance.com/event/2027onham" target="_blank" rel="noopener" class="btn btn-primary">The Blue Alliance</a>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- Map Section -->
     <section class="map-section">
-      <div class="container">
-        <div class="text-center mb-5">
-          <span class="section-badge" data-aos="fade-up">Location</span>
-          <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Find Us</h2>
-          <p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">
-            Based at Denis Morris Catholic High School in St. Catharines, Ontario
-          </p>
-        </div>
-        <div class="map-container" data-aos="fade-up" data-aos-delay="300">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2911.340865504425!2d-79.23808292266405!3d43.13937098551032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d35030099317bf%3A0x2cb23a8438f749b3!2sDenis%20Morris%20Catholic%20High%20School!5e0!3m2!1sen!2sca!4v1691957660237!5m2!1sen!2sca"
-            width="100%"
-            height="400"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Denis Morris Catholic High School Location">
-          </iframe>
-        </div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2911.340865504425!2d-79.23808292266405!3d43.13937098551032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d35030099317bf%3A0x2cb23a8438f749b3!2sDenis%20Morris%20Catholic%20High%20School!5e0!3m2!1sen!2sca!4v1691957660237!5m2!1sen!2sca"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Denis Morris Catholic High School Location">
+      </iframe>
+      <div class="map-card">
+        <span class="section-badge">Location</span>
+        <h2>Find Us</h2>
+        <p>Based at Denis Morris Catholic High School in St. Catharines, Ontario</p>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
   <footer class="site-footer">
-    <div class="footer-main">
-      <div class="container">
-        <div class="row g-4">
-          <div class="col-lg-4">
-            <div class="footer-brand">
-              <img src="./assets/img/logo.png" alt="Team 2852" class="footer-logo">
-              <p>FRC Team 2852 "High Voltage" from Denis Morris Catholic High School in St. Catharines, Ontario. Building tomorrow's innovators through robotics.</p>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <h4 class="footer-heading">Quick Links</h4>
-            <ul class="footer-links">
-              <li><a href="index">Home</a></li>
-              <li><a href="history">History</a></li>
-              <li><a href="resources">Resources</a></li>
-              <li><a href="./site/index.html">Programming Course</a></li>
-              <li><a href="sponsors">Sponsors</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-4">
-            <h4 class="footer-heading">Connect With Us</h4>
-            <div class="social-links">
-              <a href="https://www.instagram.com/frc2852/" target="_blank" rel="noopener" aria-label="Instagram">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-              <a href="mailto:jeff@2852.ca?cc=krystian.booker@gmail.com" aria-label="Email">
-                <i class="fa-solid fa-envelope"></i>
-              </a>
-              <a href="https://github.com/frc2852" target="_blank" rel="noopener" aria-label="GitHub">
-                <i class="fa-brands fa-github"></i>
-              </a>
-            </div>
-          </div>
+    <div class="container">
+      <div class="footer-main">
+        <a href="index" aria-label="DM Robotics home">
+          <img src="./assets/img/logo/white-horizontal.png" alt="DM Robotics Team 2852" class="footer-logo" loading="lazy">
+        </a>
+        <ul class="footer-links">
+          <li><a href="history">History</a></li>
+          <li><a href="resources">Resources</a></li>
+          <li><a href="./site/index.html">Programming Course</a></li>
+          <li><a href="sponsors">Sponsors</a></li>
+        </ul>
+        <div class="social-links">
+          <a href="https://www.instagram.com/frc2852/" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="mailto:jeff@2852.ca?cc=krystian.booker@gmail.com" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="https://github.com/frc2852" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       <div class="container">
-        <p>&copy; 2025 Team 2852 FRC. All rights reserved.</p>
+        <p>&copy; 2026 Team 2852 FRC. All rights reserved.</p>
       </div>
     </div>
   </footer>

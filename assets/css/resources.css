@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Resources Page Styles - Team 2852 High Voltage
+   Resources Page Styles - DM Robotics Team 2852
    ========================================================================== */
 
 /* ==========================================================================
@@ -7,14 +7,14 @@
    ========================================================================== */
 
 .resources-section {
-  padding: var(--space-20) 0;
-  background: var(--hv-gray-100);
+  padding: var(--section-pad) 0;
+  background: var(--hv-bg-warm);
   min-height: calc(100vh - 400px);
 }
 
 .resource-card {
   background: var(--hv-white);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-card);
   padding: var(--space-10);
   height: 100%;
   text-align: center;
@@ -37,7 +37,7 @@
 }
 
 .resource-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
 }
 
@@ -52,8 +52,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--hv-gray-100);
-  border-radius: var(--radius-xl);
+  background: var(--hv-bg-warm);
+  border-radius: var(--radius-card);
   transition: all var(--transition-base);
 }
 
@@ -73,15 +73,16 @@
 }
 
 .resource-card h3 {
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-bold);
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
   margin-bottom: var(--space-4);
-  color: var(--hv-gray-900);
+  color: var(--hv-ink);
 }
 
 .resource-card p {
-  color: var(--hv-gray-600);
-  line-height: var(--line-height-relaxed);
+  color: var(--hv-body);
+  line-height: 1.65;
   margin-bottom: var(--space-6);
 }
 
@@ -90,9 +91,12 @@
   align-items: center;
   gap: var(--space-2);
   color: var(--hv-primary);
-  font-weight: var(--font-weight-medium);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   text-decoration: none;
-  font-size: var(--font-size-base);
+  font-size: 17px;
   transition: all var(--transition-fast);
 }
 
@@ -114,19 +118,21 @@
    ========================================================================== */
 
 .resources-cta {
-  background: var(--hv-secondary);
+  background: var(--hv-surface-dark);
   padding: var(--space-16) 0;
   text-align: center;
   color: var(--hv-white);
 }
 
 .resources-cta h2 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  text-transform: uppercase;
   color: var(--hv-white);
   margin-bottom: var(--space-4);
 }
 
 .resources-cta p {
-  color: var(--hv-gray-400);
+  color: var(--hv-gray-300);
   max-width: 600px;
   margin: 0 auto var(--space-8);
 }

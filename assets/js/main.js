@@ -1,55 +1,14 @@
 /* ==========================================================================
-   Main JavaScript - Team 2852 High Voltage
+   Main JavaScript - DM Robotics Team 2852
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize all modules
-  initNavbar();
   initScrollToTop();
   initCounters();
   initAOS();
   initImageLightbox();
 });
-
-/* ==========================================================================
-   Navbar Scroll Effect
-   ========================================================================== */
-
-function initNavbar() {
-  const navbar = document.querySelector('.navbar');
-  if (!navbar) return;
-
-  let lastScroll = 0;
-  const scrollThreshold = 50;
-
-  function handleScroll() {
-    const currentScroll = window.pageYOffset;
-
-    // Add/remove scrolled class based on scroll position
-    if (currentScroll > scrollThreshold) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-
-    lastScroll = currentScroll;
-  }
-
-  // Throttle scroll events for performance
-  let ticking = false;
-  window.addEventListener('scroll', function() {
-    if (!ticking) {
-      window.requestAnimationFrame(function() {
-        handleScroll();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  });
-
-  // Initial check
-  handleScroll();
-}
 
 /* ==========================================================================
    Scroll to Top Button

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Sponsors Page Styles - Team 2852 High Voltage
+   Sponsors Page Styles - DM Robotics Team 2852
    ========================================================================== */
 
 /* ==========================================================================
@@ -7,8 +7,8 @@
    ========================================================================== */
 
 .sponsors-section {
-  padding: var(--space-16) 0;
-  background: var(--hv-gray-100);
+  padding: var(--section-pad) 0;
+  background: var(--hv-bg-warm);
 }
 
 /* ==========================================================================
@@ -61,10 +61,11 @@
 }
 
 .tier-title {
-  font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-bold);
+  font-size: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
   margin-bottom: var(--space-3);
-  color: var(--hv-gray-900);
+  color: var(--hv-ink);
 }
 
 .tier-line {
@@ -102,7 +103,7 @@
 .sponsor-card {
   background: var(--hv-white);
   padding: var(--space-4);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-card);
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-base);
   display: flex;
@@ -114,7 +115,7 @@
 }
 
 .sponsor-card:hover {
-  transform: scale(1.05);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
 }
 
@@ -145,13 +146,15 @@
    ========================================================================== */
 
 .sponsors-cta {
-  background: linear-gradient(135deg, var(--hv-primary), var(--hv-primary-dark));
-  padding: var(--space-16) 0;
+  background: var(--hv-primary);
+  padding: 96px 0;
   text-align: center;
   color: var(--hv-white);
 }
 
 .sponsors-cta h2 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  text-transform: uppercase;
   color: var(--hv-white);
   margin-bottom: var(--space-4);
 }
@@ -205,7 +208,7 @@
   }
 
   .tier-title {
-    font-size: var(--font-size-2xl);
+    font-size: 32px;
   }
 }
 
