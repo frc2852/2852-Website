@@ -291,7 +291,7 @@ a:hover {
 .hero-split-content {
   position: relative;
   height: 100%;
-  padding: 48px clamp(24px, 3.75vw, 48px) 48px clamp(24px, 4.7vw, 60px);
+  padding: 32px clamp(24px, 3.75vw, 48px) 32px clamp(24px, 4.7vw, 60px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -353,6 +353,24 @@ a:hover {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* Desktop: hero + stats fill the first screen; the photo crops to fit */
+@media (min-width: 900px) {
+  .hero-fold {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - var(--header-height));
+    min-height: calc(100svh - var(--header-height));
+  }
+
+  .hero-fold .hero-split {
+    flex: 1 0 auto;
+  }
+
+  .hero-fold .hero-split-photo {
+    aspect-ratio: auto;
+  }
 }
 
 /* ==========================================================================
